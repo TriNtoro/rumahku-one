@@ -1,0 +1,43 @@
+{
+  "name": "rumahku-one",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:setup": "pnpm --filter @rumahku/db-tools run cli setup",
+    "db:migrate": "pnpm --filter @rumahku/db-tools run cli up",
+    "db:rollback": "pnpm --filter @rumahku/db-tools run cli down",
+    "db:seed": "pnpm --filter @rumahku/db-tools run cli seed",
+    "seed:gen": "pnpm --filter @rumahku/db-tools run cli gen-seed",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,mjs,cjs,js}": [
+      "eslint --fix --no-warn-ignored",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml,css}": "prettier --write"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.15.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.10.1",
+    "tsx": "^4.23.15",
+    "turbo": "^2.11.11",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.72.2"
+  }
+}

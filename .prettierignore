@@ -1,0 +1,8 @@
+node_modules
+.next
+.turbo
+dist
+pnpm-lock.yaml
+supabase/migrations
+supabase/rollbacks
+docs/SPEC.html
